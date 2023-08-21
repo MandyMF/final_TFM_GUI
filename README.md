@@ -9,9 +9,9 @@ This project makes use of the git repo **https://github.com/MandyMF/BabelMatcher
 ## Installation
 
 ``` bash
-npm run init
+yarn run init
 ```
-or 
+then
 ``` bash
 yarn run init:windows
 ```
@@ -32,6 +32,10 @@ To launch the application.
 
 ``` bash
 npm run start
+```
+or
+``` bash
+yarn run start
 ```
 
 To build an executable. The output binary will be produced in the `dist` directory.
