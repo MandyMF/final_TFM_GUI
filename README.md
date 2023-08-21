@@ -41,7 +41,7 @@ npm run build
 ```
 or
 ``` bash
-yarn run Buil
+yarn run build:windows
 ```
 on windows.
 
