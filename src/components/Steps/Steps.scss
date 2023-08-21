@@ -1,0 +1,49 @@
+.view-step-container {
+    padding-top: 24px;
+    padding-bottom: 24px;
+
+    .switch-check-box {
+        height: 50px;
+    }
+
+    .justify-content-center{
+        margin-top: 16px;
+    }
+
+    .switch-inline {
+        margin-top: 24px;
+    }
+
+    .bottom {
+        display: flex;
+        position: absolute;
+        bottom: 0px;
+        justify-content: center;
+        padding-bottom: 64px;
+        margin-left: -24px;
+    
+        .nav-button {
+            margin: 24px 0 24px 0;
+        }
+    }
+}
+
+@keyframes pulse {
+	0% {
+		transform: scale(0.80);
+	}
+
+	75% {
+		transform: scale(1);
+	}
+
+	100% {
+		transform: scale(0.80);
+	}
+}
+
+
+.waiting_pulse {
+	transform: scale(1);
+	animation: pulse 2s infinite;
+}

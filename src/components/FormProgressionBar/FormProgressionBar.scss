@@ -1,0 +1,20 @@
+.progress-bar-container {
+  margin: 32px 64px 60px;
+
+  .step-container {
+    height: 64px;
+    width: 64px;
+    font-size: 32px;
+    border-radius: 50%;
+    color: white;
+    background-color: #b1b1b1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Times New Roman', Times, serif;
+
+    &.completed {
+      background-color: #002c48;
+    }
+  }
+}

@@ -1,0 +1,41 @@
+.menu {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 50px;
+}
+
+.header {
+    padding-bottom: 128px;
+}
+
+.top {
+    top: 0px;
+    padding-top: 40px;
+    width: 100%;
+    justify-content: center;
+}
+
+.middle-container {
+    padding: 0;
+}
+
+.view-container {
+    //display: flex;
+    align-content: center;
+    justify-content: center;
+}
+
+.logo {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    height: 80px;
+}
+
+.logo-2 {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    height: 80px;
+}

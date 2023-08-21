@@ -1,0 +1,10 @@
+setuptools
+pywebview
+pyinstaller; sys_platform != 'darwin'
+py2app; sys_platform == 'darwin'
+pandas
+pyyaml
+spacy
+requests
+stop-words
+bs4
