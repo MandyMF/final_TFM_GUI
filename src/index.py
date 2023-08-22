@@ -120,8 +120,8 @@ class Api:
         elif (self.model_data['search_method'] == self.search_method['loading_model']):
             self.model_instance = ExecClassModel()
               
-        #self.thread = BabelTermsMatcher.execute_async(None, self.error_catcher, [])
-        self.error_catcher()
+        self.thread = BabelTermsMatcher.execute_async(None, self.error_catcher, [])
+        #self.error_catcher()
         
     
     def get_is_model_waiting(self):
@@ -132,7 +132,8 @@ class Api:
     
     def get_error(self):      
         if(self.error_catched):
-            return f"Error {type(self.error_catched).__name__}"
+            #return f"Error {type(self.error_catched).__name__}"
+            return str(self.error_catched)
         else:
             return ''
    
@@ -142,7 +143,7 @@ class Api:
         self.run_status = 1
         self.error_catched = None
         '''
-             
+        
         try:
             self.model_instance.exec()
             self.run_status = 1

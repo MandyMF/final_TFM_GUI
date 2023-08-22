@@ -1,12 +1,13 @@
 import * as React from 'react'
 
-import { Button, Stack, Container, Row, Col, Form, Spinner } from 'react-bootstrap'
+import { Button, Stack, Container, Row, Col, Form, Spinner, Image } from 'react-bootstrap'
 
 import SwipeableViews from 'react-swipeable-views';
 import FormTextInput from './FormTextInput';
 import * as Icon from 'react-bootstrap-icons';
 
 import './Steps.scss'
+import hourglass from '../../assets/hourglass.gif'
 
 export enum search_methods {
   all_lemmas,
@@ -52,6 +53,11 @@ const styles = {
   },
   spinner_waiting: {
     marginTop: "50px"
+  },
+  hourglass: {
+    height: "96px",
+    width: "auto",
+    marginTop: "50px",
   }
 };
 
@@ -87,8 +93,8 @@ const Step6 =  (p: Step6_params) => {
       window.pywebview.api.execute_model().then( async () => {
         let interval = setInterval(()=> {
           window.pywebview.api.get_is_model_waiting().then((res_w) => {
-            console.log("get_is_model_waiting", res_w, waiting)
-            
+            //console.log("get_is_model_waiting", res_w, waiting)
+
             if(!(res_w == waiting)){    
               console.log('-----------------changed waiting-------------------');
               set_waiting(res_w)
@@ -96,7 +102,7 @@ const Step6 =  (p: Step6_params) => {
           })
   
           window.pywebview.api.get_is_finished().then((res_b) => {
-            console.log("get_loading", !res_b, loading_build)
+            //console.log("get_loading", !res_b, loading_build)
 
             if(!(!res_b == loading_build)){    
               console.log('-----------------changed loading_build-------------------');
@@ -109,9 +115,10 @@ const Step6 =  (p: Step6_params) => {
           })
 
           window.pywebview.api.get_error().then((error) => {
-            console.log("get_error", error, error_name)
+            //console.log("get_error", error, error_name)
 
-            if(error != ''){    
+            if(error != ''){   
+              console.log("get_error", error, error_name) 
               console.log('-----------------changed error-------------------');
               set_error_name(error)
               clearInterval(interval)
@@ -187,11 +194,11 @@ const Step6 =  (p: Step6_params) => {
       waiting && <Row className='justify-content-center'>
         <Col xs="auto" className='justify-content-center'>
           <Row className='justify-content-center'>
-            <Icon.HourglassSplit className='waiting_pulse' style={styles.spinner_waiting} color='#5a959a' size={96}>
-            </Icon.HourglassSplit>
+            <Image style={styles.hourglass} src={hourglass}></Image>
+            
           </Row>
           <Row className='justify-content-center'>
-            <h3>Esperando a que se refresquen los BabelKeys <br/> para seguir construyendo el modelo.</h3>
+            <h3>Esperando a que se refresquen los Babel Coins <br/> para seguir construyendo el modelo.</h3>
           </Row>
         </Col>
       </Row>

@@ -26,6 +26,15 @@ export enum search_methods {
   loading_model,
 }
 
+const screen_titles = [
+  'Inicialización',
+  'Resultados',
+  'Búsqueda',
+  'Algoritmos',
+  'Parámetros',
+  'Ejecución'
+]
+
 
 const VirtualizeSwipeableViews = virtualize(SwipeableViews);
 
@@ -152,7 +161,7 @@ const MainView =  () => {
       <Container className='top'>
         <Row className='justify-content-md-center'>
           <Col xs={10}>
-            <FormProgressionBar percentage={slide * 20} />
+            <FormProgressionBar screen_titles={screen_titles} slide={slide} percentage={slide * 20} />
           </Col>
         </Row>
       </Container>
@@ -275,7 +284,7 @@ const styles = {
     border: '1px solid #d9e0e4',
     boxShadow: '0px 2px 6px rgba(#002c48, 0.15)',
     marginBottom: '32px',
-    height: '800px',
+    height: '750px',
 
   },
 };

@@ -14,43 +14,61 @@ export default function FormProgressionBar(props) {
       >
          <Step transition="scale">
           {({ accomplished }) => (
+            <div className='main-step-container'>
              <div className={`step-container ${ accomplished ? "completed": "" }`} >
               I
              </div>
+             <p className='step-label'>{props.screen_titles[0]}</p>
+            </div>
           )}
         </Step>
         <Step transition="scale">
           {({ accomplished }) => (
+             <div className='main-step-container'>
              <div className={`step-container ${ accomplished ? "completed": "" }`} >
              II
             </div>
+            <p className='step-label'>{props.screen_titles[1]}</p>
+            </div>
           )}
         </Step>
         <Step transition="scale">
           {({ accomplished }) => (
+            <div className='main-step-container'>
              <div className={`step-container ${ accomplished ? "completed": "" }`} >
              III
             </div>
+            <p className='step-label'>{props.screen_titles[2]}</p>
+            </div>
           )}
         </Step>
         <Step transition="scale">
           {({ accomplished }) => (
+            <div className='main-step-container'>
              <div className={`step-container ${ accomplished ? "completed": "" }`} >
              IV
             </div>
-          )}
-        </Step>
-        <Step transition="scale">
-          {({ accomplished }) => (
-             <div className={`step-container ${ accomplished ? "completed": "" }`} >
-             V
+            <p className='step-label'>{props.screen_titles[3]}</p>
             </div>
           )}
         </Step>
         <Step transition="scale">
           {({ accomplished }) => (
+            <div className='main-step-container'>
+             <div className={`step-container ${ accomplished ? "completed": "" }`} >
+             V
+            </div>
+            <p className='step-label'>{props.screen_titles[4]}</p>
+            </div>
+          )}
+        </Step>
+        <Step transition="scale">
+          {({ accomplished }) => (
+            <div className='main-step-container'>
              <div className={`step-container ${ accomplished ? "completed": "" }`} >
              VI
+            </div>
+            <p className='step-label'>{props.screen_titles[5]}</p>
             </div>
           )}
         </Step>

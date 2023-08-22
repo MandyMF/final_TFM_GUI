@@ -1,7 +1,8 @@
 .progress-bar-container {
-  margin: 32px 64px 60px;
+  margin: 32px 64px 100px;
 
   .step-container {
+    line-height: 1 !important;
     height: 64px;
     width: 64px;
     font-size: 32px;
@@ -14,7 +15,29 @@
     font-family: 'Times New Roman', Times, serif;
 
     &.completed {
+      height: 72px;
+      width: 72px;
       background-color: #002c48;
     }
   }
+
+  .main-step-container{
+    height: 64px;
+    width: 64px;
+    line-height: 1.4;
+  }
+
+  .step-label {
+    margin-top: 8px;
+    font-weight: bold;
+    color: #002c48;
+    line-height: 1!important;
+
+    
+    text-align: center;
+    width: 100px;
+    margin-left: -25%;
+    
+  }
+
 }
