@@ -6,6 +6,7 @@ import { virtualize } from 'react-swipeable-views-utils';
 import { Button, Stack, Container, Row, Col, Image, ButtonGroup} from 'react-bootstrap'
 import FormProgressionBar from '../FormProgressionBar/FormProgressionBar'
 
+import Step0 from '../Steps/Step0';
 import Step1 from '../Steps/Step1';
 import Step2 from '../Steps/Step2';
 import Step3 from '../Steps/Step3';
@@ -27,6 +28,7 @@ export enum search_methods {
 }
 
 const screen_titles = [
+  'Bienvenida',
   'Inicialización',
   'Resultados',
   'Búsqueda',
@@ -161,7 +163,7 @@ const MainView =  () => {
       <Container className='top'>
         <Row className='justify-content-md-center'>
           <Col xs={10}>
-            <FormProgressionBar screen_titles={screen_titles} slide={slide} percentage={slide * 20} />
+            <FormProgressionBar screen_titles={screen_titles} slide={slide} percentage={slide * 100/6 + 0.000001} />
           </Col>
         </Row>
       </Container>
@@ -171,7 +173,12 @@ const MainView =  () => {
           <Col xs={10}>
 
         <MineSwipeableView slide={slide} listOfViews={[
-          <CenterView key={0}>
+            <CenterView key={0}>
+              <Step0
+                next_step={nextStep}
+                />
+          </CenterView>,
+          <CenterView key={1}>
             <Step1 
               babel_key = {babel_key}
               set_babel_key = {set_babel_key}
@@ -186,7 +193,7 @@ const MainView =  () => {
             />
           </CenterView>,
 
-          <CenterView key={1}>
+          <CenterView key={2}>
             <Step2
               result_folder_path = {result_folder_path}
               set_result_folder_path = {set_result_folder_path}
@@ -195,7 +202,7 @@ const MainView =  () => {
             ></Step2>
           </CenterView>,
             
-          <CenterView key={2}>
+          <CenterView key={3}>
             <Step3
                 search_levels = {search_levels}
                 set_search_levels = {set_search_levels}
@@ -210,7 +217,7 @@ const MainView =  () => {
             ></Step3>
           </CenterView>,
             
-          <CenterView key={3}>
+          <CenterView key={4}>
             <Step4
                 search_method = {search_method}
                 set_search_method = {set_search_method}
@@ -219,7 +226,7 @@ const MainView =  () => {
             ></Step4>
           </CenterView>,
             
-          <CenterView key={4}>
+          <CenterView key={5}>
             <Step5
               search_method = {search_method}
 
@@ -239,9 +246,9 @@ const MainView =  () => {
 
             ></Step5>
           </CenterView>,
-          <CenterView key={5}>
+          <CenterView key={6}>
             {
-            slide == 5 &&
+            slide == 6 &&
             <Step6
                 babel_key={babel_key}
                 lang={lang}
@@ -283,8 +290,8 @@ const styles = {
     borderRadius: '20px',
     border: '1px solid #d9e0e4',
     boxShadow: '0px 2px 6px rgba(#002c48, 0.15)',
-    marginBottom: '32px',
-    height: '750px',
+    //marginBottom: '32px',
+    height: '736px',
 
   },
 };

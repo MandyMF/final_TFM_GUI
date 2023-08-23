@@ -30,7 +30,7 @@ const Step4 =  (p: Step6_params) => {
       <Row className='justify-content-center header'>
         <Col xs="auto" md={{offset: 0}}>
           <h1>
-            Selección del algoritmo de construcción del modelo NER:
+            Selección del algoritmo de construcción del modelo NER
           </h1>
         </Col>
       </Row>

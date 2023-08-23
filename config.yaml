@@ -1,23 +1,17 @@
-babel_key: ""
-data_to_process_path: E:/MyStuff/TFM/codigo/data/data_to_process.csv
+babel_key: asd
+data_to_process_path: asd
 dataset_is_lemmatized: false
-id_list:
-- bn:00015180n
-- bn:00063143n
-- bn:00012902n
-lang: EN
+id_list: []
+lang: ES
 lemma_list:
-- cancer
-load_model_path: E:/MyStuff/TFM/codigo/model_saved
+- asd
+load_model_path: ''
 match_levenshtein_distance: 2
 not_wait_when_token_are_spend: false
-result_file_path: E:/MyStuff/TFM/grafical_results/result.json
-save_html_view: E:/MyStuff/TFM/grafical_results/result.html
-save_model_path: E:/MyStuff/TFM/grafical_results/model_saved
-save_pattern_path: E:/MyStuff/TFM/grafical_results/pattern.json
+result_file_path: asd/result.json
+save_html_view: asd/result.html
+save_model_path: asd/model_saved
+save_pattern_path: asd/pattern.json
 search_levels: 2
-tag_list:
-- cancer
-- neumonia
-- fractura
+tag_list: []
 waiting_time_on_error: 4000

@@ -37,7 +37,7 @@ const Step3 =  (p: Step3_params) => {
       <Row className='justify-content-center header'>
         <Col xs="auto" md={{offset: 0}}>
           <h1>
-            Inicialización de variables de búsqueda:
+            Inicialización de variables de búsqueda
           </h1>
         </Col>
       </Row>

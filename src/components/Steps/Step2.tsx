@@ -40,7 +40,7 @@ const Step2 =  (p: Step2_params) => {
       <Row className='justify-content-center header'>
         <Col xs="auto" md={{offset: 0}}>
           <h1>
-            Ubicación de los Resultados:
+            Ubicación de los Resultados
           </h1>
         </Col>
       </Row>

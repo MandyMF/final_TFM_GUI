@@ -12,7 +12,7 @@ export default function FormProgressionBar(props) {
         unfilledBackground="#b1b1b1"
         height='24px'
       >
-         <Step transition="scale">
+        <Step transition="scale">
           {({ accomplished }) => (
             <div className='main-step-container'>
              <div className={`step-container ${ accomplished ? "completed": "" }`} >
@@ -22,19 +22,19 @@ export default function FormProgressionBar(props) {
             </div>
           )}
         </Step>
-        <Step transition="scale">
+         <Step transition="scale">
           {({ accomplished }) => (
-             <div className='main-step-container'>
+            <div className='main-step-container'>
              <div className={`step-container ${ accomplished ? "completed": "" }`} >
-             II
-            </div>
-            <p className='step-label'>{props.screen_titles[1]}</p>
+              II
+             </div>
+             <p className='step-label'>{props.screen_titles[1]}</p>
             </div>
           )}
         </Step>
         <Step transition="scale">
           {({ accomplished }) => (
-            <div className='main-step-container'>
+             <div className='main-step-container'>
              <div className={`step-container ${ accomplished ? "completed": "" }`} >
              III
             </div>
@@ -69,6 +69,16 @@ export default function FormProgressionBar(props) {
              VI
             </div>
             <p className='step-label'>{props.screen_titles[5]}</p>
+            </div>
+          )}
+        </Step>
+        <Step transition="scale">
+          {({ accomplished }) => (
+            <div className='main-step-container'>
+             <div className={`step-container ${ accomplished ? "completed": "" }`} >
+             VII
+            </div>
+            <p className='step-label'>{props.screen_titles[6]}</p>
             </div>
           )}
         </Step>

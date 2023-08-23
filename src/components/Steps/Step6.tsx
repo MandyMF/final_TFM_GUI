@@ -143,7 +143,7 @@ const Step6 =  (p: Step6_params) => {
       <Row className='justify-content-center'>
         <Col xs="auto" md={{offset: 0}}>
           <h1>
-            Construyendo y ejecutando modelo:
+            Construyendo y ejecutando modelo
           </h1>
         </Col>
       </Row>

@@ -43,7 +43,7 @@ const Step1 =  (p: Step1_params) => {
       <Row className='justify-content-center header'>
         <Col xs="auto" md={{offset: 0}}>
           <h1>
-            Inicialización de variables Básicas:
+            Inicialización de variables Básicas
           </h1>
         </Col>
       </Row>
@@ -75,7 +75,7 @@ const Step1 =  (p: Step1_params) => {
         <Col xs="auto" md={{offset: 4}}>
           <Form>
               <Form.Group className="mb-3">
-                <Form.Label>Lenguaje</Form.Label>
+                <Form.Label>Idioma</Form.Label>
                 <Form.Control as="select" type='text'
                   onChange={(e) => p.set_lang(e.target.value)}
                   value={p.lang}
@@ -121,7 +121,13 @@ const Step1 =  (p: Step1_params) => {
       </Row>
 
       <Container className='bottom'>
-        <Stack direction="horizontal" className='justify-content-center'>
+        <Stack direction="horizontal" gap={5}>
+          {   
+          <Button className='nav-button' onClick={() => p.next_step(true)} as="a" variant="primary">
+            Anterior
+          </Button>
+          }
+
           {
             (!is_empty(p.babel_key) && !is_empty(p.data_to_process_path)) && <Button className='nav-button' onClick={() => p.next_step()} as="a" variant="success">
             Siguiente

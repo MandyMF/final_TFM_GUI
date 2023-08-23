@@ -96,16 +96,16 @@ const Step5 =  (p: Step5_params) => {
       <Row className='justify-content-center header'>
         <Col xs="auto" md={{offset: 0}}>
           <h1>
-            Parámetros para procesar con todos los lemmas encontrados:
+            Parámetros para procesar con todos los lemmas encontrados
           </h1>
         </Col>
       </Row>
 
       <Row className='justify-content-start'>
-        <Col xs="auto" md={{offset: 4}}>
+        <Col xs={4} md={{offset: 4}}>
           <Form>
               <Form.Group className="mb-3">
-                <Form.Label>Lista de Lemmas </Form.Label>
+                <Form.Label>Listado de Lemmas </Form.Label>
                 <Form.Control type='text' placeholder="Lemmas separados por comas" 
                   onChange={(e) => {
                     if (e.target.value != '')
@@ -139,16 +139,16 @@ const Step5 =  (p: Step5_params) => {
         <Row className='justify-content-center header'>
           <Col xs="auto" md={{offset: 0}}>
             <h1>
-              Parámetros para procesar por el primer lemma encontrado:
+              Parámetros para procesar por el primer lemma encontrado
             </h1>
           </Col>
         </Row>
   
         <Row className='justify-content-start'>
-          <Col xs="auto" md={{offset: 4}}>
+          <Col xs={4} md={{offset: 4}}>
             <Form>
                 <Form.Group className="mb-3">
-                  <Form.Label>Lista de Lemmas</Form.Label>
+                  <Form.Label>Listado de Lemmas</Form.Label>
                   <Form.Control type='text' placeholder="Lemmas separados por comas" 
                       onChange={(e) => {
                         if (e.target.value != '')
@@ -182,16 +182,16 @@ const Step5 =  (p: Step5_params) => {
         <Row className='justify-content-center header'>
           <Col xs="auto" md={{offset: 0}}>
             <h1>
-              Parámetros para procesar por identificadores Synset de BabelNet:
+              Parámetros para procesar por identificadores <br/> Synset de BabelNet
             </h1>
           </Col>
         </Row>
   
         <Row className='justify-content-start'>
-          <Col xs="auto" md={{offset: 4}}>
+          <Col xs={4} md={{offset: 4}}>
             <Form>
                 <Form.Group className="mb-3">
-                  <Form.Label>Lista de identificadores Synset</Form.Label>
+                  <Form.Label>Listado de identificadores Synset</Form.Label>
                   <Form.Control type='text' placeholder="Identificadores separados por comas" 
                       onChange={(e) => {
                         if (e.target.value != '')
@@ -225,16 +225,16 @@ const Step5 =  (p: Step5_params) => {
           <Row className='justify-content-center header'>
             <Col xs="auto" md={{offset: 0}}>
               <h1>
-                Parámetros para procesar por identificadores Synset de BabelNet y marcar con etiquetas:
+                Parámetros para procesar por identificadores <br/> Synset de BabelNet y marcar con etiquetas
               </h1>
             </Col>
           </Row>
     
           <Row className='justify-content-start'>
-            <Col xs="auto" md={{offset: 4}}>
+            <Col xs={4} md={{offset: 4}}>
               <Form>
                   <Form.Group className="mb-3">
-                    <Form.Label>Lista de identificadores Synset</Form.Label>
+                    <Form.Label>Listado de identificadores Synset</Form.Label>
                     <Form.Control type='text' placeholder="Identificadores separados por comas" 
                       onChange={(e) => {
                         if (e.target.value != '')
@@ -258,11 +258,11 @@ const Step5 =  (p: Step5_params) => {
           </Row>
 
           <Row className='justify-content-start'>
-            <Col xs="auto" md={{offset: 4}}>
+            <Col xs={4} md={{offset: 4}}>
               <Form>
                   <Form.Group className="mb-3">
-                    <Form.Label>Lista de Etiquetas</Form.Label>
-                    <Form.Control type='text' placeholder="Lista de Etiquetas" 
+                    <Form.Label>Listado de Etiquetas</Form.Label>
+                    <Form.Control type='text' placeholder="Etiquetas separadas por comas" 
                       onChange={(e) => {
                         if (e.target.value != '')
                           return p.set_tag_list(process_entry(e.target.value));
@@ -297,7 +297,7 @@ const Step5 =  (p: Step5_params) => {
       <Row className='justify-content-center header'>
         <Col xs="auto" md={{offset: 0}}>
           <h1>
-            Parámetros para procesar cargando y usando un modelo NER:
+            Parámetros para procesar cargando y usando un modelo NER
           </h1>
         </Col>
       </Row>
