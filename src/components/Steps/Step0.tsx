@@ -12,6 +12,9 @@ import logo_banner from "../../assets/logos_banner.png"
 const styles = {
   banner: {
     width: '100%',
+  },
+  centerText: {
+    textAlign: "center"
   }
 }
 
@@ -42,8 +45,8 @@ const Step0 =  (p: Step0_params) => {
         </Col>
       </Row>
       <Row className='justify-content-center'>
-        <Col xs="auto" md={{offset: 0}}>
-          <h5><b>Esta aplicación te permitirá buscar elementos semánticos sobre datos creando modelos NER.</b></h5>
+        <Col xs={11} md={{offset: 0}} style={styles.centerText}>
+          <h5><b>Esta aplicación permite configurar y ejecutar un modelo NER para la identificación de signos no radiológicos en reportes médicos.</b></h5>
         </Col>
       </Row>
 

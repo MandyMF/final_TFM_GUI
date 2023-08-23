@@ -96,7 +96,7 @@ const Step5 =  (p: Step5_params) => {
       <Row className='justify-content-center header'>
         <Col xs="auto" md={{offset: 0}}>
           <h1>
-            Parámetros para procesar con todos los lemmas encontrados
+            Parámetros para procesar con todos los lemas encontrados
           </h1>
         </Col>
       </Row>
@@ -105,8 +105,8 @@ const Step5 =  (p: Step5_params) => {
         <Col xs={4} md={{offset: 4}}>
           <Form>
               <Form.Group className="mb-3">
-                <Form.Label>Listado de Lemmas </Form.Label>
-                <Form.Control type='text' placeholder="Lemmas separados por comas" 
+                <Form.Label>Listado de Lemas </Form.Label>
+                <Form.Control type='text' placeholder="Lemas separados por comas" 
                   onChange={(e) => {
                     if (e.target.value != '')
                       return p.set_lemma_list(process_entry(e.target.value));
@@ -139,7 +139,7 @@ const Step5 =  (p: Step5_params) => {
         <Row className='justify-content-center header'>
           <Col xs="auto" md={{offset: 0}}>
             <h1>
-              Parámetros para procesar por el primer lemma encontrado
+              Parámetros para procesar por el primer lema encontrado
             </h1>
           </Col>
         </Row>
@@ -148,8 +148,8 @@ const Step5 =  (p: Step5_params) => {
           <Col xs={4} md={{offset: 4}}>
             <Form>
                 <Form.Group className="mb-3">
-                  <Form.Label>Listado de Lemmas</Form.Label>
-                  <Form.Control type='text' placeholder="Lemmas separados por comas" 
+                  <Form.Label>Listado de Lemas</Form.Label>
+                  <Form.Control type='text' placeholder="Lemas separados por comas" 
                       onChange={(e) => {
                         if (e.target.value != '')
                           return p.set_lemma_list(process_entry(e.target.value));

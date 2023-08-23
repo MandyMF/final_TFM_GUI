@@ -44,12 +44,12 @@ const Step4 =  (p: Step6_params) => {
                 <Form.Check 
                   type='radio'
                   checked={p.search_method == search_methods.all_lemmas} 
-                  label = 'Todos los lemmas encontrados.'
+                  label = 'Todos los lemas encontrados.'
                   onChange={() =>  p.set_search_method(search_methods.all_lemmas)}></Form.Check>
                 <Form.Check 
                   type='radio'
                   checked={p.search_method == search_methods.first_lemma} 
-                  label = 'El primer lemma encontrado.'
+                  label = 'El primer lema encontrado.'
                   onChange={() =>  p.set_search_method(search_methods.first_lemma)}></Form.Check>
                 <Form.Check 
                   type='radio'

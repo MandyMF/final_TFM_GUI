@@ -50,7 +50,6 @@ const Step2 =  (p: Step2_params) => {
           <Form>
               <Form.Group className="mb-3">
                 <Form.Label>Carpeta donde guardar los resultados</Form.Label>
-
                 <Row className='justify-content-center'>
                 <Col xs="auto" md={{offset: 0}}>
                   <Form.Control type='text'

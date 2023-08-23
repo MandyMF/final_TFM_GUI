@@ -16,6 +16,7 @@ class Api:
         self.model_instance = None
         self.run_status = 2             # status no inicializado es 2
         self.error_catched = ''
+        self.interrupt = False
         
         self.search_method = {
             'all_lemmas': 0,
@@ -122,7 +123,12 @@ class Api:
               
         self.thread = BabelTermsMatcher.execute_async(None, self.error_catcher, [])
         #self.error_catcher()
-        
+    
+    def reset_model(self):
+        self.model_instance.babelTermsMatcher.doNotWaitForServer = True
+        self.thread = None
+        self.model_instance = None
+        self.error_catched = ''
     
     def get_is_model_waiting(self):
         return self.model_instance.babelTermsMatcher.waiting
@@ -137,13 +143,7 @@ class Api:
         else:
             return ''
    
-    def error_catcher(self):
-        '''
-        self.model_instance.exec()
-        self.run_status = 1
-        self.error_catched = None
-        '''
-        
+    def error_catcher(self):    
         try:
             self.model_instance.exec()
             self.run_status = 1
@@ -152,7 +152,12 @@ class Api:
         except Exception as error:
             self.run_status = 0
             self.error_catched = error
-        
+    
+    def get_interrupt(self):
+        return self.interrupt
+    
+    def toggle_interrupt(self):
+        self.interrupt = not self.interrupt
 
 def get_entrypoint():
     def exists(path):
@@ -191,5 +196,5 @@ def set_interval(interval):
 entry = get_entrypoint()
 
 if __name__ == '__main__':
-    window = webview.create_window('pywebview-react boilerplate', entry, js_api=Api(), fullscreen=False, width=1920, height=1080) 
+    window = webview.create_window('BabelMatcher', entry, js_api=Api(), fullscreen=False, width=1920, height=1080) 
     webview.start(debug=True)

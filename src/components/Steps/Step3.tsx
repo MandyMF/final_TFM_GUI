@@ -89,7 +89,7 @@ const Step3 =  (p: Step3_params) => {
                 />
                 </Col>
                 <Col xs="auto">
-                <Form.Label className='switch-label'> Asumir que el dataset está lemmatizado </Form.Label>
+                <Form.Label className='switch-label'> El dataset está lemmatizado </Form.Label>
                 </Col>
               </Row>
               </Form.Group>
