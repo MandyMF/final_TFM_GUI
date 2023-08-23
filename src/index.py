@@ -197,4 +197,4 @@ entry = get_entrypoint()
 
 if __name__ == '__main__':
     window = webview.create_window('BabelMatcher', entry, js_api=Api(), fullscreen=False, width=1920, height=1080) 
-    webview.start(debug=True)
+    webview.start(debug=False)
