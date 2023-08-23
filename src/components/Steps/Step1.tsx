@@ -50,11 +50,11 @@ const Step1 =  (p: Step1_params) => {
 
       {/*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/}
       <Row className='justify-content-start'>
-        <Col xs="auto" md={{offset: 4}}>
+        <Col xs={3} md={{offset: 4}}>
           <Form>
               <Form.Group className="mb-3">
-                <Form.Label>Babel Key</Form.Label>
-                <Form.Control type='text' placeholder="Valor del Babel Key" 
+                <Form.Label>Llave BabelNet</Form.Label>
+                <Form.Control type='text' placeholder="Valor de la llave BabelNet" 
                   onChange={(e) => p.set_babel_key(e.target.value)}
                   value={p.babel_key}
                 />
@@ -75,7 +75,7 @@ const Step1 =  (p: Step1_params) => {
         <Col xs="auto" md={{offset: 4}}>
           <Form>
               <Form.Group className="mb-3">
-                <Form.Label>Idioma</Form.Label>
+                <Form.Label>Idioma de Procesamiento</Form.Label>
                 <Form.Control as="select" type='text'
                   onChange={(e) => p.set_lang(e.target.value)}
                   value={p.lang}
@@ -93,12 +93,12 @@ const Step1 =  (p: Step1_params) => {
         <Col xs="auto" md={{offset: 4}}>
           <Form>
               <Form.Group className="mb-3">
-                <Form.Label>Archivo a procesar</Form.Label>
+                <Form.Label>Archivo de datos a procesar</Form.Label>
 
                 <Row className='justify-content-center'>
                 <Col xs="auto" md={{offset: 0}}>
                   <Form.Control type='text'
-                    placeholder="Archivo csv a procesar"
+                    placeholder="Archivo a procesar"
                     onChange={(e) => p.set_data_to_process_path(e.target.value)}
                     value={p.data_to_process_path}
                   >

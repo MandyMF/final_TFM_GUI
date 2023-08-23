@@ -14,8 +14,11 @@
     justify-content: center;
     align-items: center;
     font-family: 'Times New Roman', Times, serif;
+    
+    
 
     &.completed {
+      margin-top: -4px;
       height: 72px;
       width: 72px;
       background-color: #002c48;

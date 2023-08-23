@@ -126,16 +126,21 @@ const MainView =  () => {
     window.pywebview.api.close();
   }
 
+  const fullscreen = () => {
+    window.pywebview.api.fullscreen();
+  }
+
   const minimize = () => {
     window.pywebview.api.minimize();
   }
 
   return (
     <div className='view-container'>
-      {
+      { false &&
       <div className='menu'>
         <ButtonGroup>
           <Button onClick={minimize} variant="secondary">&#128469;</Button>
+          <Button onClick={fullscreen} variant="secondary">&#128470;</Button>
           <Button onClick={close} variant="secondary">&#10006;</Button>
         </ButtonGroup>
       </div>
@@ -290,7 +295,7 @@ const styles = {
     borderRadius: '20px',
     border: '1px solid #d9e0e4',
     boxShadow: '0px 2px 6px rgba(#002c48, 0.15)',
-    //marginBottom: '32px',
+    marginBottom: '32px',
     height: '736px',
 
   },

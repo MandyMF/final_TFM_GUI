@@ -1,6 +1,6 @@
-babel_key: asd
-data_to_process_path: asd
-dataset_is_lemmatized: false
+babel_key: jkl
+data_to_process_path: jkl
+dataset_is_lemmatized: true
 id_list: []
 lang: ES
 lemma_list:

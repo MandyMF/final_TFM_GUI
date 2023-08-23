@@ -75,11 +75,11 @@ const Step5 =  (p: Step5_params) => {
           Anterior
         </Button>}
         {!not_show_next && <Button className='nav-button' onClick={() => p.next_step()} as="a" variant="success">
-          Siguiente
+          Ejecutar
         </Button>
         }
         {not_show_next && <Button className='nav-button' as="a" variant="secondary" style={{opacity: '0.5'}} onClick={() => set_show_alerts(true)}>
-          Siguiente
+          Ejecutar
         </Button>
         }
       </Stack>

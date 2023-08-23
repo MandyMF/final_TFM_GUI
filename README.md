@@ -5,6 +5,7 @@ This project makes use of the git repo **https://github.com/MandyMF/BabelMatcher
 - Python 3
 - Node
 - virtualenv
+- yarn (recommended)
 
 ## Installation
 
@@ -31,17 +32,13 @@ On Linux systems installation system makes educated guesses. If you run KDE, QT 
 To launch the application.
 
 ``` bash
-npm run start
-```
-or
-``` bash
 yarn run start
 ```
 
 To build an executable. The output binary will be produced in the `dist` directory.
 
 ``` bash
-npm run build
+yarn run build
 ```
 or
 ``` bash
@@ -49,13 +46,15 @@ yarn run build:windows
 ```
 on windows.
 
+``` bash
+yarn run build:linux
+```
+on linux.
+
 To start a development server (only for testing frontend code).
 
+
 ``` bash
-npm run dev
-```
-or
-``` bash
-yarn run build:windows
+yarn run dev
 ```
 on windows.

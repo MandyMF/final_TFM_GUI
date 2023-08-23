@@ -83,13 +83,13 @@ const Step3 =  (p: Step3_params) => {
               <Form.Group className="mb-3">
               <Row>
                 <Col xs="auto">
-                <Form.Label> Asumir que el dataset está lemmatizado </Form.Label>
-                </Col>
-                <Col xs="auto">
-                <Form.Check className='switch-check-box' type='switch'
+                <Form.Check type='switch'
                   onChange={(e) => p.set_dataset_is_lemmatized(!p.dataset_is_lemmatized)}
                   checked={p.dataset_is_lemmatized}
                 />
+                </Col>
+                <Col xs="auto">
+                <Form.Label className='switch-label'> Asumir que el dataset está lemmatizado </Form.Label>
                 </Col>
               </Row>
               </Form.Group>
