@@ -3,7 +3,7 @@ This project makes use of the git repo **https://github.com/MandyMF/BabelMatcher
 
 ## Requirements
 - Python 3
-- Node
+- Node (recommended v16.17.1)
 - virtualenv
 - yarn (recommended)
 
