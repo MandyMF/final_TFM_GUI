@@ -159,6 +159,7 @@ const Step6 =  (p: Step6_params) => {
 
   return (
     <Container className='view-step-container'>
+      <div>
       <Row className='justify-content-center'>
         <Col xs="auto" md={{offset: 0}}>
           <h1>
@@ -244,9 +245,9 @@ const Step6 =  (p: Step6_params) => {
         </Col>
       </Row>
       }
-
+      </div>
       <Container className='bottom'>
-        <Stack direction="horizontal" gap={5}>
+        <Stack direction="horizontal" gap={5} className='justify-content-center'>
           { !interrupt && <>
           {(!loading_build && !waiting) && !error_name && <Button className='nav-button' onClick={() => local_restart()} as="a" variant="primary">
             Reiniciar Proceso

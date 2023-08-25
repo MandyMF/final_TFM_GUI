@@ -33,6 +33,7 @@ const Step3 =  (p: Step3_params) => {
 
   return (
     <Container className='view-step-container'>
+      <div>
       {/*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/}
       <Row className='justify-content-center header'>
         <Col xs="auto" md={{offset: 0}}>
@@ -97,9 +98,9 @@ const Step3 =  (p: Step3_params) => {
         </Col>
       </Row>
 
-      
+      </div>
       <Container className='bottom'>
-        <Stack direction="horizontal" gap={5}>
+        <Stack direction="horizontal" gap={5} className='justify-content-center'>
           { <Button className='nav-button' onClick={() => p.next_step(true)} as="a" variant="primary">
             Anterior
           </Button>}

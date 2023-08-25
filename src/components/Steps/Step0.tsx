@@ -29,6 +29,7 @@ const Step0 =  (p: Step0_params) => {
 
   return (
     <Container className='view-step-container'>
+      <div>
       {/*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/}
       <Row className='justify-content-center header'>
         <Col xs="auto" md={{offset: 0}}>
@@ -49,6 +50,7 @@ const Step0 =  (p: Step0_params) => {
           <h5><b>Esta aplicación permite configurar y ejecutar un modelo NER para la identificación de signos no radiológicos en reportes médicos.</b></h5>
         </Col>
       </Row>
+      </div>
 
       <Container className='bottom'>
         <Stack direction="horizontal" className='justify-content-center'>

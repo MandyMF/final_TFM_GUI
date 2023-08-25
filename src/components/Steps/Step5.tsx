@@ -87,7 +87,7 @@ const Step5 =  (p: Step5_params) => {
   const bottom_buttons = (not_show_next) => {
       return  (
       <Container className='bottom'>
-      <Stack direction="horizontal" gap={5}>
+      <Stack direction="horizontal" gap={5} className='justify-content-center'>
         { <Button className='nav-button' onClick={() => p.next_step(true)} as="a" variant="primary">
           Anterior
         </Button>}
@@ -110,6 +110,7 @@ const Step5 =  (p: Step5_params) => {
   if (search_methods.all_lemmas == p.search_method){
     return (
     <Container className='view-step-container'>
+      <div>
       <Row className='justify-content-center header'>
         <Col xs="auto" md={{offset: 0}}>
           <h1>
@@ -143,6 +144,7 @@ const Step5 =  (p: Step5_params) => {
           </Form>
         </Col>
       </Row>
+      </div>
       {bottom_buttons(has_empty(p.lemma_list))}
 
     </Container>
@@ -153,6 +155,7 @@ const Step5 =  (p: Step5_params) => {
     else if (search_methods.first_lemma == p.search_method){
       return (
       <Container className='view-step-container'>
+        <div>
         <Row className='justify-content-center header'>
           <Col xs="auto" md={{offset: 0}}>
             <h1>
@@ -186,7 +189,7 @@ const Step5 =  (p: Step5_params) => {
             </Form>
           </Col>
         </Row>
-
+        </div>
         {bottom_buttons(has_empty(p.lemma_list))}
       </Container>
     )}
@@ -196,6 +199,7 @@ const Step5 =  (p: Step5_params) => {
     else if (search_methods.by_ids == p.search_method){
       return (
       <Container className='view-step-container'>
+        <div>
         <Row className='justify-content-center header'>
           <Col xs="auto" md={{offset: 0}}>
             <h1>
@@ -229,7 +233,7 @@ const Step5 =  (p: Step5_params) => {
             </Form>
           </Col>
         </Row>
-
+        </div>
         {bottom_buttons(has_empty(p.id_list))}
       </Container>
     )}
@@ -239,6 +243,7 @@ const Step5 =  (p: Step5_params) => {
       else if (search_methods.by_tag_ids == p.search_method){
         return (
         <Container className='view-step-container'>
+          <div>
           <Row className='justify-content-center header'>
             <Col xs="auto" md={{offset: 0}}>
               <h1>
@@ -300,7 +305,7 @@ const Step5 =  (p: Step5_params) => {
               </Form>
             </Col>
           </Row>
-
+          </div>
           {bottom_buttons(has_empty(p.id_list) || has_empty(p.tag_list) || not_equal_size(p.id_list, p.tag_list))}
 
         </Container>
@@ -311,6 +316,7 @@ const Step5 =  (p: Step5_params) => {
   else if (search_methods.loading_model == p.search_method){
     return (
     <Container className='view-step-container'>
+      <div>
       <Row className='justify-content-center header'>
         <Col xs="auto" md={{offset: 0}}>
           <h1>
@@ -350,7 +356,7 @@ const Step5 =  (p: Step5_params) => {
         </Col>
       </Row>
 
-
+      </div>
       {bottom_buttons(false)}
 
     </Container>
