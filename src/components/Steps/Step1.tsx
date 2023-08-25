@@ -22,11 +22,25 @@ interface Step1_params {
 
 const Step1 =  (p: Step1_params) => {
 
+  const next_step_l = () => {
+    window.pywebview.api.check_file_exist(p.data_to_process_path).then((exist) => {
+      if(exist){
+        p.next_step();
+        set_no_exist_alert(false);
+      }
+      else {
+        set_no_exist_alert(true);
+      }
+    });
+  }
+
   const [show_alerts, set_show_alerts] = React.useState(false);
+  const [no_exist_alert, set_no_exist_alert] = React.useState(false);
 
   const get_path_data = () => {
     window.pywebview.api.get_data_file().then((path) => {
-      p.set_data_to_process_path(path);
+      if(path.trim() != '')
+        p.set_data_to_process_path(path);
     });
   }
 
@@ -116,6 +130,11 @@ const Step1 =  (p: Step1_params) => {
                   Seleccione un archivo
               </Alert>
               }
+              {
+                no_exist_alert && <Alert variant="danger">
+                  El archivo introducido no existe <br/> o no es un CSV
+              </Alert>
+              }
           </Form>
         </Col>
       </Row>
@@ -129,7 +148,7 @@ const Step1 =  (p: Step1_params) => {
           }
 
           {
-            (!is_empty(p.babel_key) && !is_empty(p.data_to_process_path)) && <Button className='nav-button' onClick={() => p.next_step()} as="a" variant="success">
+            (!is_empty(p.babel_key) && !is_empty(p.data_to_process_path)) && <Button className='nav-button' onClick={() => next_step_l()} as="a" variant="success">
             Siguiente
           </Button>
           }

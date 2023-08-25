@@ -31,7 +31,23 @@ interface Step5_params {
 
 const Step5 =  (p: Step5_params) => {
 
+  const next_step_l = () => {
+    if(p.search_method == search_methods.loading_model)
+      window.pywebview.api.check_folder_exits(p.load_model_path).then((exist) => {
+        if(exist){
+          p.next_step();
+          set_no_exist_alert(false);
+        }
+        else {
+          set_no_exist_alert(true);
+        }
+      });
+    else
+      p.next_step();
+  }
+
   const [show_alerts, set_show_alerts] = React.useState(false);
+  const [no_exist_alert, set_no_exist_alert] = React.useState(false);
 
   const has_empty = (list) => {
 
@@ -62,6 +78,7 @@ const Step5 =  (p: Step5_params) => {
 
   const get_path_data = () => {
     window.pywebview.api.get_result_folder().then((path) => {
+      if(path.trim() != '')
         p.set_load_model_path(path);
       
     });
@@ -74,7 +91,7 @@ const Step5 =  (p: Step5_params) => {
         { <Button className='nav-button' onClick={() => p.next_step(true)} as="a" variant="primary">
           Anterior
         </Button>}
-        {!not_show_next && <Button className='nav-button' onClick={() => p.next_step()} as="a" variant="success">
+        {!not_show_next && <Button className='nav-button' onClick={() => next_step_l()} as="a" variant="success">
           Ejecutar
         </Button>
         }
@@ -277,7 +294,7 @@ const Step5 =  (p: Step5_params) => {
                   </Form.Group>
                   {
                       show_alerts && ((has_empty(p.tag_list) || not_equal_size(p.id_list, p.tag_list))) && <Alert variant="danger">
-                      El número de etiquetas debe ser igual <br/> al número de identificadores de Synset
+                      El número de etiquetas debe ser <br/> igual al número de identificadores de Synset
                     </Alert>
                   }
               </Form>
@@ -324,6 +341,11 @@ const Step5 =  (p: Step5_params) => {
                 </Col>
                 </Row>
               </Form.Group>
+              {
+                no_exist_alert && <Alert variant="danger">
+                  La carpeta introducida no existe
+              </Alert>
+              }
           </Form>
         </Col>
       </Row>

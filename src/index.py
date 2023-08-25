@@ -35,6 +35,16 @@ class Api:
     def minimize(self):
         webview.windows[0].minimize()
 
+    def check_file_exist(self, file_path):
+        if(os.path.isfile(file_path) and file_path.endswith('.csv')):
+            return True
+        return False
+    
+    def check_folder_exits(self, folder_path):
+        if(os.path.exists(folder_path)):
+            return True
+        return False
+
     def save_content(self, content):
         filename = webview.windows[0].create_file_dialog(webview.SAVE_DIALOG)
         if not filename:
@@ -97,7 +107,7 @@ class Api:
             "id_list" : [i.strip() for i in model_data['id_list']] ,
             "tag_list" : [i.strip() for i in model_data['tag_list']] ,
             "load_model_path" : model_data['load_model_path'].strip() ,
-            "waiting_time_on_error": 4000,
+            "waiting_time_on_error": 300,
             "not_wait_when_token_are_spend": False
         }
         
@@ -197,4 +207,4 @@ entry = get_entrypoint()
 
 if __name__ == '__main__':
     window = webview.create_window('BabelMatcher', entry, js_api=Api(), fullscreen=False, width=1920, height=1080) 
-    webview.start(debug=False)
+    webview.start(debug=True)

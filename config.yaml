@@ -4,8 +4,8 @@ dataset_is_lemmatized: false
 id_list: []
 lang: EN
 lemma_list:
-- asd
-load_model_path: asd
+- dsad
+load_model_path: E:/MyStuff/TFM/codigo/model_saved
 match_levenshtein_distance: 2
 not_wait_when_token_are_spend: false
 result_file_path: E:/MyStuff/TFM/grafical_results/result.json
@@ -14,4 +14,4 @@ save_model_path: E:/MyStuff/TFM/grafical_results/model_saved
 save_pattern_path: E:/MyStuff/TFM/grafical_results/pattern.json
 search_levels: 2
 tag_list: []
-waiting_time_on_error: 4000
+waiting_time_on_error: 300

@@ -18,7 +18,20 @@ interface Step2_params {
 
 const Step2 =  (p: Step2_params) => {
 
+  const next_step_l = () => {
+    window.pywebview.api.check_folder_exits(p.result_folder_path).then((exist) => {
+      if(exist){
+        p.next_step();
+        set_no_exist_alert(false);
+      }
+      else {
+        set_no_exist_alert(true);
+      }
+    });
+  }
+
   const [show_alerts, set_show_alerts] = React.useState(false);
+  const [no_exist_alert, set_no_exist_alert] = React.useState(false);
 
   const is_empty = (value: String) => {
     if(value)
@@ -29,7 +42,8 @@ const Step2 =  (p: Step2_params) => {
 
   const get_path_data = () => {
     window.pywebview.api.get_result_folder().then((path) => {
-      p.set_result_folder_path(path);    
+      if(path.trim() != '')
+        p.set_result_folder_path(path);    
     });
   }
 
@@ -71,6 +85,11 @@ const Step2 =  (p: Step2_params) => {
                   Seleccione una carpeta
               </Alert>
               }
+              {
+                no_exist_alert && <Alert variant="danger">
+                  La carpeta introducida no existe
+              </Alert>
+              }
           </Form>
         </Col>
       </Row>
@@ -82,7 +101,7 @@ const Step2 =  (p: Step2_params) => {
           </Button>}
           {
             !is_empty(p.result_folder_path) &&
-            <Button className='nav-button' onClick={() => p.next_step()} as="a" variant="success">
+            <Button className='nav-button' onClick={() => next_step_l()} as="a" variant="success">
             Siguiente
           </Button>
           }
