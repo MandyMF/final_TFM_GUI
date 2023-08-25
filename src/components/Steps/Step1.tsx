@@ -132,7 +132,10 @@ const Step1 =  (p: Step1_params) => {
               }
               {
                 no_exist_alert && <Alert variant="danger">
-                  El archivo introducido no existe <br/> o no es un CSV
+                  El archivo introducido no existe <br/> 
+                  o no cumple con el formato de <br />
+                  Reporte de Radiografía
+                  
               </Alert>
               }
           </Form>

@@ -36,12 +36,24 @@ class Api:
         webview.windows[0].minimize()
 
     def check_file_exist(self, file_path):
+        check = False
         if(os.path.isfile(file_path) and file_path.endswith('.csv')):
-            return True
-        return False
+            check = True
+       
+            try:
+                file = open(file_path, "r")
+                columns = file.readline().split(',')
+                check = check and 'Report' in columns and 'ImageID' in columns         
+                file.close()
+                
+                return check
+            except:
+                return False
+            
+        return check
     
     def check_folder_exits(self, folder_path):
-        if(os.path.exists(folder_path)):
+        if(os.path.exists(folder_path) and os.path.isdir(folder_path)):
             return True
         return False
 
