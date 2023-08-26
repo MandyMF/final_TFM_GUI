@@ -42,7 +42,7 @@ class Api:
        
             try:
                 file = open(file_path, "r")
-                columns = file.readline().split(',')
+                columns = file.readline().strip().split(',')
                 check = check and 'Report' in columns and 'ImageID' in columns         
                 file.close()
                 
