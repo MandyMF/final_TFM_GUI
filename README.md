@@ -1,18 +1,19 @@
 # TFM GUI
-This project makes use of the git repo **https://github.com/MandyMF/BabelMatcherTFM.git** branch  **relative_imports** as a submodule. As a base the **pywebview-react-boilerplate** was used.
+This project makes use of the git repo **https://github.com/MandyMF/BabelMatcherTFM.git** as a submodule. As a base the **pywebview-react-boilerplate** was used.
 
 ## Requirements
 - Python 3
 - Node (recommended v16.17.1)
 - virtualenv
 - yarn (recommended)
+- Git
 
 ## Installation
 
 ``` bash
 yarn run init
 ```
-then
+on error run
 ``` bash
 yarn run init:windows
 ```
@@ -21,7 +22,6 @@ on windows.
 This will create a virtual environment, install pip and Node dependencies. Alternatively you can perform these steps manually.
 
 ``` bash
-npm install
 pip install -r requirements.txt
 ```
 
@@ -44,8 +44,8 @@ or
 ``` bash
 yarn run build:windows
 ```
-on windows.
-
+on windows
+or
 ``` bash
 yarn run build:linux
 ```
@@ -57,4 +57,3 @@ To start a development server (only for testing frontend code).
 ``` bash
 yarn run dev
 ```
-on windows.
