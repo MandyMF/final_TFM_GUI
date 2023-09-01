@@ -96,10 +96,7 @@ class Api:
         
         self.model_data = model_data
         
-        result_folder = model_data['result_folder_path'].strip() 
-        
-        #if result_folder[len(result_folder)-1] != '/':
-        #    result_folder += '/' 
+        result_folder = model_data['result_folder_path'].strip()
         
         config_to_write = {
             "babel_key" : model_data['babel_key'] ,
@@ -144,7 +141,6 @@ class Api:
             self.model_instance = ExecClassModel()
               
         self.thread = BabelTermsMatcher.execute_async(None, self.error_catcher, [])
-        #self.error_catcher()
     
     def reset_model(self):
         self.model_instance.babelTermsMatcher.doNotWaitForServer = True
@@ -160,7 +156,6 @@ class Api:
     
     def get_error(self):      
         if(self.error_catched):
-            #return f"Error {type(self.error_catched).__name__}"
             return str(self.error_catched)
         else:
             return ''
@@ -219,4 +214,4 @@ entry = get_entrypoint()
 
 if __name__ == '__main__':
     window = webview.create_window('BabelMatcher', entry, js_api=Api(), fullscreen=False, width=1920, height=1080) 
-    webview.start(debug=True)
+    webview.start(debug=False)
